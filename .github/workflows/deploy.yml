@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -18,23 +18,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-
       - run: npm ci
-
       - run: npm run build
-        env:
-          NEXT_PUBLIC_SUPABASE_URL: https://ioegdtitxdkuwaluqpfp.supabase.co
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlvZWdkdGl0eGRrdXdhbHVxcGZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAwNTY0OTUsImV4cCI6MjA5NTYzMjQ5NX0.guKrUV4Q_IwJoRxJQKJVSmviAsLTrS8BWy0rzS7xnSw
-
       - uses: actions/configure-pages@v4
-
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
-
       - id: deployment
         uses: actions/deploy-pages@v4
