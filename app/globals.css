@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== 全局样式 ========== */
+body {
+  @apply min-h-screen;
+  background: linear-gradient(135deg, #fff5f0 0%, #fef3c7 50%, #fce7f3 100%);
+  background-attachment: fixed;
+}
+
+/* ========== TipTap 编辑器样式 ========== */
+.tiptap-editor {
+  @apply outline-none min-h-[120px] text-gray-800 leading-relaxed;
+}
+
+.tiptap-editor p {
+  @apply my-1;
+}
+
+.tiptap-editor h1 {
+  @apply text-2xl font-bold my-3;
+}
+
+.tiptap-editor h2 {
+  @apply text-xl font-bold my-2;
+}
+
+.tiptap-editor h3 {
+  @apply text-lg font-bold my-2;
+}
+
+.tiptap-editor ul {
+  @apply list-disc pl-6 my-2;
+}
+
+.tiptap-editor ol {
+  @apply list-decimal pl-6 my-2;
+}
+
+.tiptap-editor blockquote {
+  @apply border-l-4 border-warm-300 pl-4 italic text-gray-600 my-2;
+}
+
+.tiptap-editor pre {
+  @apply bg-gray-100 rounded-lg p-3 my-2 font-mono text-sm overflow-x-auto;
+}
+
+.tiptap-editor code {
+  @apply bg-gray-100 rounded px-1.5 py-0.5 font-mono text-sm text-rose-500;
+}
+
+.tiptap-editor pre code {
+  @apply bg-transparent text-gray-800 p-0;
+}
+
+.tiptap-editor a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
+
+.tiptap-editor s {
+  @apply line-through;
+}
+
+.tiptap-editor p.is-editor-empty:first-child::before {
+  @apply text-gray-400 float-left pointer-events-none h-0;
+  content: attr(data-placeholder);
+}
+
+/* ========== 留言内容渲染样式 ========== */
+.message-content p {
+  @apply my-1;
+}
+
+.message-content h1 { @apply text-xl font-bold my-2; }
+.message-content h2 { @apply text-lg font-bold my-2; }
+.message-content h3 { @apply text-base font-bold my-1; }
+.message-content ul { @apply list-disc pl-5 my-1; }
+.message-content ol { @apply list-decimal pl-5 my-1; }
+.message-content blockquote {
+  @apply border-l-4 border-warm-300 pl-3 italic text-gray-500 my-1;
+}
+.message-content pre {
+  @apply bg-gray-100 rounded-lg p-3 my-2 font-mono text-sm overflow-x-auto;
+}
+.message-content code {
+  @apply bg-gray-100 rounded px-1.5 py-0.5 font-mono text-sm text-rose-500;
+}
+.message-content a {
+  @apply text-blue-600 underline;
+}
+.message-content s {
+  @apply line-through;
+}
+
+/* ========== 滚动条美化 ========== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-warm-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-warm-400;
+}
